@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Task Manager</h1>
+
+        <button id="themeToggle">
+            Toggle Theme
+        </button>
+    </header>
+
+    <section class="card">
+        <h2>Add Task</h2>
+
+        <form id="taskForm">
+
+            <input type="text" id="taskTitle" placeholder="Task title" required>
+
+            <select id="category">
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+            </select>
+
+            <button type="submit">
+                Add Task
+            </button>
+
+        </form>
+    </section>
+
+    <section class="card">
+        <h2>Tasks</h2>
+        <div style="padding: 10px;" class="stats">
+            <p>Total: <span id="totalCount">0</span></p>
+            <p>Completed: <span id="completedCount">0</span></p>
+            <p>Pending: <span id="pendingCount">0</span></p>
+
+            <button id="clearAll">
+                Clear All
+            </button>
+        </div>
+
+        <div id="taskContainer"></div>
+    </section>
+
+    <section class="card">
+        <h2>Attributes vs Properties Demo</h2>
+        <p style="padding: 10px 0;">*Try changing the input to see the difference</p>
+
+        <input id="demoInput" type="text" value="Initial Attribute Value">
+
+        <button id="showDifference">
+            Show Difference
+        </button>
+
+        <p style="padding: 10px 0;" id="differenceOutput"></p>
+    </section>
+
+    <section class="card">
+        <h2>Event Propagation Demo</h2>
+        <div id="grandparent" class="grandparent">
+            Grandparent
+            <div id="parent" class="parent">
+                Parent
+                <button id="child">
+                    Child Button
+                </button>
+            </div>
+        </div>
+
+        <p style="padding: 10px 0;">*Open console and click Child Button.</p>
+    </section>
+
+    <section class="card">
+        <h2>Browser Rendering Pipeline</h2>
+
+        <div class="pipeline">
+
+            <div class="box">HTML</div>
+            <div>↓</div>
+            <div class="box">Tokenization</div>
+            <div>↓</div>
+            <div class="box">Parsing</div>
+            <div>↓</div>
+            <div class="box">DOM Tree creation</div>
+
+            <div>↓</div>
+
+            <div class="box">CSS parsing</div>
+            <div>↓</div>
+            <div class="box">CSSOM Tree creation</div>
+            <div>↓</div>
+            <div style="text-align: center;;" class="box">CSSOM Tree <br> + <br> DOM Tree</div>
+            <div>↓</div>
+
+            <div class="box">Render Tree</div>
+            <div>↓</div>
+
+            <div class="box">Layout (Reflow)</div>
+            <div>↓</div>
+
+            <div class="box">Paint</div>
+            <div>↓</div>
+
+            <div class="box">Composite</div>
+
+        </div>
+    </section>
+    <div id="editModal" class="modal hidden">
+        <div class="modal-content">
+            <h2>Edit Task</h2>
+
+            <input type="text" id="editTaskInput" placeholder="Edit task">
+
+            <select id="editCategory">
+                <option value="Work">Work</option>
+                <option value="Study">Study</option>
+                <option value="Personal">Personal</option>
+            </select>
+
+            <div class="modal-actions">
+                <button id="saveEdit">Save</button>
+                <button id="closeModal">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
